@@ -23,12 +23,6 @@
                </div>
    
                <div class="mb-3">
-                   <label class="form-label" for="image">Add Images</label >
-                   <input type="file" name="image" id="image" multiple>
-                </div>
-               </div>
-   
-               <div class="mb-3">
                    <label class="form-label" for="price">Campground Price</label>
                    <div class="input-group">
                        <span class="input-group-text" id="price-label">$</span>
@@ -48,6 +42,13 @@
                    </div>
                </div>
 
+               <div class="mb-3 custom-file">
+                <label for="image" class="form-label">Choose Images</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+                <label for="image" class="custom-file-label text-muted"></label>
+            </div>
+
+
                <div class="mb-3">
                 <% campground.images.forEach(function(img, i) {  %>
 
@@ -58,11 +59,24 @@
                 <label for="image-<%=i%>">Delete?</label>
                 <% })%>
             </div>
+            
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <button class="btn btn-info">Update Campground</button>
+                    </div>
 
-               <div class="mb-3">
-                   <button class="btn btn-info">Update Campground</button>
+                    
+                </div>
+                
+               <div class="col-6">
+                    <div class="mb-3">
+                        <button class="btn btn-warning" a href="/campgrounds/<%= campground._id%>">Back To Campground</a></button>
+                    </div>
                </div>
+            </div>
+              
            </form>
-           <a href="/campgrounds/<%= campground._id%>">Back To Campground</a>
+        
        </div>
       </div>
